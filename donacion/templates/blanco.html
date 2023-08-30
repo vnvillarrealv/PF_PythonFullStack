@@ -1,0 +1,33 @@
+{% extends "fijos.html" %}
+{% block title %}CAMPAÑAS{% endblock %}
+{% block content %}
+  <section class="py-5 text-center container">
+    <!-- ... tu contenido existente ... -->
+    <form method="GET">
+      <label for="categoria">Seleccionar categoría:</label>
+      <select name="categoria" id="categoria">
+        <option value="">Todas</option>
+        <option value="salud">Salud</option>
+        <option value="educacion">Educación</option>
+        <option value="deporte">Deporte</option>
+        <!-- Agrega más opciones de categorías aquí -->
+      </select>
+      <button type="submit">Filtrar</button>
+    </form>
+  </section>
+  <div class="py-2 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for categoria in lista_categoria %}
+          {% if not request.GET.categoria or categoria.categoria == request.GET.categoria %}
+            <div class="col">
+              <div class="card shadow-sm">
+                <!-- Tu contenido de la tarjeta -->
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

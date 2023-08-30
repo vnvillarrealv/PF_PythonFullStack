@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "proyecto-final"
+version = "0.1.0"
+description = "Proyecto final Crowdfunding EELA Septiembre 2023."
+authors = ["Valeria Villarreal, Frank Toro, Pedro Espinoza"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "proyecto_final"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.3"
+django-environ = "^0.10.0"
+psycopg2-binary = "^2.9.6"
+django-extensions = "^3.2.3"
+celery = "^5.3.1"
+django-celery-beat = "^2.5.0"
+schedule = "^1.2.0"
+django-paypal = "^2.0"
+paypal = "^1.2.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

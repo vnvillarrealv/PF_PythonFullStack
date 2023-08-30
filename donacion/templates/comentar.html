@@ -1,0 +1,19 @@
+{% load static %}
+{% if user.is_authenticaded %}
+    <h1>Añadir comentario</h1>
+    <br/> <br/>
+
+    <div class = "form-group">
+<form method="POST">
+        {% crsf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary"> Añadir comentario </button>
+    </div>
+
+{% else %}
+Debes haber iniciado sesion para comentario
+
+{% endif %}
+
+
+

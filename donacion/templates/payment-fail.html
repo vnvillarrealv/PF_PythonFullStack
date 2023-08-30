@@ -1,0 +1,15 @@
+{% extends 'fijos.html' %}
+{% load static %}
+{% block content %}
+<main class="flex-shrink-0">
+    <div class="container">
+        <br>
+        <img src="https://cdni.iconscout.com/illustration/premium/thumb/something-went-wrong-2511607-2133695.png" width="40%" height="40%" position="center" alt="Imagen error">
+        <h1 class="mt-5">Ha habido un error :(</h1>
+        <p class="lead">Lo sentimos, algo ha salido mal y no se pudo procesar tu donación. Inténtalo nuevamente.</p>
+        <a href="{% url 'index' %}">Volver al Inicio</a>
+    </div>
+</main>
+<hr>
+<br>
+{% endblock %}

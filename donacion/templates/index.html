@@ -1,0 +1,103 @@
+{% extends "fijos.html" %}
+{% block title %}PÁGINA{% endblock %}
+{% block content %}
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner"> <!--dentro de este van lo del carrusel-->
+    
+    <div class="carousel-item active">
+      <img src="https://t4.ftcdn.net/jpg/03/59/55/79/360_F_359557922_GPydLSSfjdlK4oEGn1ScOsMLFoEDecTl.jpg" width="100%" height="100%" position="center" alt="Imagen inicial cf">
+      <!-- <img src="{{ aa }}" width="100%" height="100%" positio="center" alt="Imagen web cf"> -->
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1>¡Sé parte del cambio!</h1>
+          <p class="opacity-75" >Busca la campaña con la que te sientas identificado, aporta y sé parte del cambio.</p>
+          <p><a class="btn btn-lg btn-primary" href="{% url 'catalogo_camp' %}">Ver las campañas</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <img src="https://www.shutterstock.com/shutterstock/videos/14227898/thumb/1.jpg?ip=x480" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Encuentra la ayuda que buscas</h1>
+          <p>Inicia una campaña y logra tu objetivo.</p>
+          <p><a class="btn btn-lg btn-primary" href="login">Empezar campaña</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <img src="https://www.matanata.com/upload/Image/pages/pages-20.jpg" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
+      <div class="container">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Nuestros logros</h1>
+          <p>Gracias a tu ayuda hemos cambiado la vida de mucha gente. Mira algunos de nuestros datos.</p>
+          <p><a class="btn btn-lg btn-primary" href="#">Ver más</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading fw-normal lh-1"><a href="{% url 'perfil_detallado_camp' 15 %}">Mira nuestra campaña destacada </a> <span class="text-body-secondary"></span></h2>
+      <p class="lead">AGYA Gatos y Amigos se han unido para ayudar a este hermoso y valiente gatito.</p>
+    </div>
+    <div class="col-md-5">
+      <img src="https://www.catcareofvinings.com/blog/wp-content/uploads/2022/09/iStock-1141292071.jpg" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
+      <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h2 class="featurette-heading fw-normal lh-1"><a href="#">Consejos para llegar a más gente en tu campaña </a> <span class="text-body-secondary"></span></h2>
+      <p class="lead">Nuestro equipo ha recopilado 10 de los mejores consejos para que tu campaña destaque y llegue a su objetivo.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <img src="https://i1.wp.com/www.eslactivity.org/wp-content/uploads/2015/09/advice-ahead.jpg?resize=1580%2C1127" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
+      <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+
+
+  <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
+{% endblock %}
