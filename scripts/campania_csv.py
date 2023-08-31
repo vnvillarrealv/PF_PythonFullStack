@@ -3,7 +3,7 @@ from donacion.models import CAMPANIA,CATEGORIAS
 
 def feed_campania():
     CAMPANIA.objects.all().delete()    
-    with open('data/campa¤a_csv1.csv', encoding='UTF-8') as csv_file:
+    with open('data/2campania_csv1.csv', encoding='UTF-8') as csv_file:
         csv_dict_reader = csv.DictReader(csv_file, delimiter=';')        
         for item in csv_dict_reader:
             categoria = CATEGORIAS.objects.get(pk = item['categoria'])

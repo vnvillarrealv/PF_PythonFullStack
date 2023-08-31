@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('',views.index, name='index'),#muestra la pantalla principal
+    #path('index/',views.index, name='index'),
     path('catalogo_camp/',views.catalogo_camp, name='catalogo_camp'),#muesra el catalogo de las campañas
     path('perfil_detallado_camp/<int:camp_id>/',views.perfil_detallado_camp, name='perfil_detallado_camp'),#muestra la info de cada campaña
     path('ventana_aporte/<int:camp2_id>/', views.ventana_aporte, name ='ventana_aporte'),
