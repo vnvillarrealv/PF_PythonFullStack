@@ -3,12 +3,13 @@ from donacion.models import CAMPANIA,CATEGORIAS
 
 def feed_campania():
     CAMPANIA.objects.all().delete()    
-    with open('data/campania_csv1este.csv', encoding='UTF-8') as csv_file:
+    with open('data/campania_csv1final.csv', encoding='UTF-8') as csv_file:
         csv_dict_reader = csv.DictReader(csv_file, delimiter=';')        
         for item in csv_dict_reader:
             categoria = CATEGORIAS.objects.get(pk = item['categoria'])
             print("campaña:", item)
-            variable = CAMPANIA(categoria=categoria,
+            variable = CAMPANIA(id = item['id'],
+                                    categoria=categoria,
                                     nombre_campania = item['nombre_campania'],
                                     descripcion = item['descripcion'],
                                     beneficiario = item['beneficiario'],

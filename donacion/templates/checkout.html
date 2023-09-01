@@ -1,6 +1,6 @@
 {% extends "fijos.html" %}
 {% load static %}
-{% block title %}Checkout{% endblock %}
+{% block title %}checkout{% endblock %}
 {% block content %}
    
 <div class="container">
@@ -18,7 +18,7 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="firstName" name="nombre" placeholder="" value="Frank" required>
+              <input type="text" class="form-control" id="firstName" name="nombre" placeholder="" required>
               <div class="invalid-feedback">
                 Por favor ingrese su Nombre.
               </div>
@@ -26,7 +26,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="lastName" name="apellido" placeholder="" value="Toro" required>
+              <input type="text" class="form-control" id="lastName" name="apellido" placeholder="" required>
               <div class="invalid-feedback">
                 Por favor ingrese su apellido.
               </div>
@@ -50,10 +50,6 @@
               <div class="col-12">
                 <label for="address" class="form-label">Realice un comentario a la CAMPAÑA</label>
                 <input type="text" class="form-control" id="comentario" name="comentario" placeholder="Comentario" value="">
-                <!-- <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div> -->
-              </div>
           </div>
               <br>
               <div class="d-flex flex-row pb-3">
@@ -63,6 +59,9 @@
                     <div class="d-flex flex-row align-items-center">
                       <h6 class="mb-0 text-primary pe-1">$</h6>
                       <input type="text" class="form-control form-control-sm" name="valor_donado" id="numberExample" value="" style="width: 55px;" required/>
+                      <div class="invalid-feedback">
+                        Ingrese el valor.
+                      </div>
                     </div>
                   </div>
                 </div>

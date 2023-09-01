@@ -1,10 +1,11 @@
 {% extends 'fijos.html' %}
 {% load static %}
+{% block title %}Donacion exitosa{% endblock %}
 {% block content %}
 <main class="flex-shrink-0">
     <div class="container">
         <br>
-        <img src="https://www.nicepng.com/png/detail/61-618868_thank-you-wax-seal-style-stamp-icon.png" width="20%" height="20%" position="center" alt="Imagen gracias">
+        <img src="{% static 'img/exitoso.png' %}" width="20%" height="20%" position="center" alt="Imagen gracias">
         <h1 class="mt-5">Donación Existosa</h1>
         <p class="lead">Muchas gracias por tu generosidad y ayuda.</p>
         <a href="{% url 'index' %}">Volver al Inicio</a>

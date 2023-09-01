@@ -39,8 +39,6 @@ class CAMPANIA(models.Model):
 class DONACION(models.Model):
     nombre_campania = models.ForeignKey(CAMPANIA, on_delete=models.CASCADE,related_name='donaciones')#related_name te ayuda a hacer un "llamadoa al revez" de la tabla campania hacia donacion. YA QUE CAMPANIA NO DEPENDE DE DONACION, y asi es ocmo podiamos llamar a donacion a atraves de campania
     usuario = models.CharField(max_length=200)#luego en el template se colcoa el bloque de codigo correspondiente
-    # nombre = models.CharField(max_length=200)
-    # apellido = models.CharField(max_length=200)
     valor_donado= models.DecimalField(max_digits=10,decimal_places=2)
     fecha_donativo = models.DateField(null=True)
     comentario = models.CharField(max_length=5000, null=True)
@@ -55,10 +53,32 @@ class DONACION(models.Model):
 @receiver([post_save, post_delete], sender=DONACION)
 def actualizar_monto_recaudado(sender, instance, **kwargs):
     campania = instance.nombre_campania
-    print("Nombre campaña models:",campania)
     nuevo_monto_recaudado = campania.donaciones.aggregate(models.Sum('valor_donado'))['valor_donado__sum']
-    print("nuevo_monto_recaudado",nuevo_monto_recaudado)
     campania.monto_recaudado = nuevo_monto_recaudado or 0
     campania.save()
+
+def categoria_alterna():
+    categoria_alterna = models.ForeignKey(CATEGORIAS, on_delete=models.CASCADE)
+    return categoria_alterna
+
+class SOLICITUDES_CAMPANIAS(models.Model):
+    
+    categoria = models.ForeignKey(CATEGORIAS, on_delete=models.SET_DEFAULT, default=categoria_alterna)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    email = models.CharField(max_length=100)
+    nombre_campania = models.CharField(max_length=100)
+    descripcion = models.CharField(max_length=5000)
+    beneficiario = models.CharField(max_length=200)
+    monto_a_recaudar= models.DecimalField(max_digits=10,decimal_places=2)
+    direccion = models.CharField(max_length=500)
+    telefono = models.CharField(max_length=500)
+
+    class Meta:
+        db_table = 'nueva_solicitud'
+        verbose_name_plural = 'nuevas_solicitudes'
+    
+    def __str__(self) -> str:
+        return f"campaña nueva: ${self.nombre_campania}"
 
 

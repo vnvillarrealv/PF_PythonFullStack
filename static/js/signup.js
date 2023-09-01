@@ -30,8 +30,7 @@ const sign_up = (csrf_token) => {
       {headers: {'X-CSRFToken': csrf_token}}
     ).then(resultado => {
         alert('El usuario se registró exitosamente. Inicie sesión.');
-        // document.location.href = '/login';
-        document.location.href = '/';
+        document.location.href = '/login';
     }).catch(error => {
         let feedbackOtrasValidaciones = document.getElementById('feedbackOtrasValidaciones');
         feedbackOtrasValidaciones.classList.remove('d-none');        

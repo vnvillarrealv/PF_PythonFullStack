@@ -1,5 +1,5 @@
 {% extends "fijos.html" %}
-{% block title %}PÁGINA{% endblock %}
+{% block title %}DreamBig{% endblock %}
 {% block content %}
 
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -12,7 +12,6 @@
     
     <div class="carousel-item active">
       <img src="https://t4.ftcdn.net/jpg/03/59/55/79/360_F_359557922_GPydLSSfjdlK4oEGn1ScOsMLFoEDecTl.jpg" width="100%" height="100%" position="center" alt="Imagen inicial cf">
-      <!-- <img src="{{ aa }}" width="100%" height="100%" positio="center" alt="Imagen web cf"> -->
       <div class="container">
         <div class="carousel-caption text-start">
           <h1>¡Sé parte del cambio!</h1>
@@ -28,7 +27,7 @@
         <div class="carousel-caption">
           <h1>Encuentra la ayuda que buscas</h1>
           <p>Inicia una campaña y logra tu objetivo.</p>
-          <p><a class="btn btn-lg btn-primary" href="login">Empezar campaña</a></p>
+          <p><a class="btn btn-lg btn-primary" href="{% url 'solicitud_campania' %}">Empezar campaña</a></p>
         </div>
       </div>
     </div>
@@ -41,7 +40,7 @@
         <div class="carousel-caption">
           <h1>Nuestros logros</h1>
           <p>Gracias a tu ayuda hemos cambiado la vida de mucha gente. Mira algunos de nuestros datos.</p>
-          <p><a class="btn btn-lg btn-primary" href="#">Ver más</a></p>
+          <p><a class="btn btn-lg btn-primary" href="{% url 'logros' %}">Ver más</a></p>
         </div>
       </div>
     </div>
@@ -71,12 +70,11 @@
 
   <div class="row featurette">
     <div class="col-md-7">
-      <h2 class="featurette-heading fw-normal lh-1"><a href="{% url 'perfil_detallado_camp' 15 %}">Mira nuestra campaña destacada </a> <span class="text-body-secondary"></span></h2>
-      <p class="lead">AGYA Gatos y Amigos se han unido para ayudar a este hermoso y valiente gatito.</p>
+      <h2 class="featurette-heading fw-normal lh-1"><a href="{% url 'perfil_detallado_camp' campaña.id %}">Mira nuestra campaña destacada </a> <span class="text-body-secondary"></span></h2>
+      <p class="lead">{{campaña.nombre_campania}}</p>
     </div>
     <div class="col-md-5">
-      <img src="https://www.catcareofvinings.com/blog/wp-content/uploads/2022/09/iStock-1141292071.jpg" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
-      <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
+      <img src="{{campaña.imagen}}" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
     </div>
   </div>
 
@@ -84,12 +82,11 @@
 
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
-      <h2 class="featurette-heading fw-normal lh-1"><a href="#">Consejos para llegar a más gente en tu campaña </a> <span class="text-body-secondary"></span></h2>
+      <h2 class="featurette-heading fw-normal lh-1"><a href="{% url 'consejos' %}">Consejos para llegar a más gente en tu campaña </a> <span class="text-body-secondary"></span></h2>
       <p class="lead">Nuestro equipo ha recopilado 10 de los mejores consejos para que tu campaña destaque y llegue a su objetivo.</p>
     </div>
     <div class="col-md-5 order-md-1">
       <img src="https://i1.wp.com/www.eslactivity.org/wp-content/uploads/2015/09/advice-ahead.jpg?resize=1580%2C1127" width="100%" height="100%" position="center" alt="Imagen inicial cf"> 
-      <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg> -->
     </div>
   </div>
 

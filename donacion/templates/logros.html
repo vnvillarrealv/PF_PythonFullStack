@@ -1,0 +1,39 @@
+{% extends "fijos.html" %}
+{% load static %}
+{% block title %}Logros{% endblock %}
+{% block content %}
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+<div class="position-relative overflow-hidden text-center bg-body-tertiary">
+  <div class="col-md-6 mx-auto my-5">
+    <div class="col-md-5 mx-auto">
+      <img src="{% static 'img/voluntariado.png' %}" class="img-fluid rounded-start" alt="imagen">
+    </div>
+    <h6 class="display-3 fw-bold">Campañas con mayor recaudaciones</h6>
+  </div>
+</div>
+<div class="container marketing">
+
+
+  <!-- START THE FEATURETTES -->
+  {% for campaña in lista_campañas %}
+    {% if campaña.monto_recaudado > campaña.monto_a_recaudar %}
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1"><a href="{% url 'perfil_detallado_camp' campaña.id %}">{{campaña.nombre_campania}} </a> <span class="text-body-secondary"></span></h2>
+          <p class="lead">Se logró recaudar u monto de ${{campaña.monto_recaudado}}</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="{{campaña.imagen}}" width="500" height="300" position="center" alt="Imagen inicial cf"> 
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+    {% endif %}
+  {% endfor %}
+
+
+</div><!-- /.container -->
+{% endblock %}

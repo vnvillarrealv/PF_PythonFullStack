@@ -8,12 +8,7 @@ def actualizar_status():
     print("fecha tasks:",now)
     campanias_a_cerrar = CAMPANIA.objects.filter(fecha_cierre__lte=now, status=True)
     for campania in campanias_a_cerrar:
-        print("campania: ",campania)
-        print('fecha_cierre',campania.fecha_cierre)
-        print("cambiando status")
-        print("estatus",campania.status)
         campania.status = False
-        print("estatus cmabiado",campania.status)
         campania.save()
 
     print("Tarea en segundo plano: Verificación y actualización de status de campañas completada.")

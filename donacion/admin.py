@@ -1,13 +1,6 @@
 #pylint: disable=all
 from django.contrib import admin
-from .models import CATEGORIAS, CAMPANIA, DONACION
-
-# Register your models here.
-# admin.site.register(principal)
-# admin.site.register(animal)
-# admin.site.register(salud)
-# admin.site.register(educacion)
-# admin.site.register(humanitaria)
+from .models import CATEGORIAS, CAMPANIA, DONACION, SOLICITUDES_CAMPANIAS
 
 @admin.register(CATEGORIAS)
 class CATEGORIASAdmin(admin.ModelAdmin):
@@ -23,5 +16,10 @@ class CAMPANIAAdmin(admin.ModelAdmin):
 @admin.register(DONACION)
 class DONACIONAdmin(admin.ModelAdmin):
     list_display = ('id','nombre_campania','usuario','valor_donado')
+
+
+@admin.register(SOLICITUDES_CAMPANIAS)
+class SOLICITUDES_CAMPANIASAdmin(admin.ModelAdmin):
+    list_display = ('categoria','nombre_campania','nombre','apellido','beneficiario','monto_a_recaudar')
 
 

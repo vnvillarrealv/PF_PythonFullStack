@@ -1,0 +1,120 @@
+{% extends "fijos.html" %}
+{% block title %}Solicitud campaña{% endblock %}
+{% block content %}
+   
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>CONTACTANOS</h2>
+      <p class="lead">Envianos tu información para contactarte y completar la solicitud de inicio de campaña.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <form class="needs-validation" method="post" action="{% url 'campania_registrada' %}" novalidate>
+          {% csrf_token %} 
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="firstName" name="nombre" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Ingrese un nombre.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="lastName" name="apellido" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Ingrese un apellido.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-body-secondary"></span></label>
+              <input type="email" class="form-control" id="email" name="email" value="" placeholder="you@example.com" required>
+              <div class="invalid-feedback">
+                Ingrese un correo valido.
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Seleccione la razón principal por la cual desea recaudar dinero</label>
+                <select class="form-select" id="filtroCategoriaCAMP" name="categoria_CAMP_filtro" required>
+                  <option value=""></option>
+                  <option value="gastos_medicos">Gastos Médicos</option>
+                  <option value="educacion">Educación</option>
+                  <option value="deporte">Deporte</option>
+                  <option value="animal">Animal</option>
+                  <option value="emprendimiento">Emprendimiento</option>
+                  <option value="arte">Arte</option>
+                  <option value="otro">otro</option>
+               </select>
+              <div class="invalid-feedback">
+                Ingrese un la provincia.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Escriba un nombre para su campaña</label>
+              <input type="text" class="form-control" id="campania" placeholder="" value="" name="campania" required>
+              <div class="invalid-feedback">
+                Ingrese un nombre para su campaña.
+              </div>
+            </div>
+
+            <div class="col-12">Escriba el nombre del beneficiario en caso de ser usted ingrese su nombre y apellido</label>
+              <input type="text" class="form-control" id="beneficiario" placeholder="" value="" name="beneficiario" required>
+              <div class="invalid-feedback">
+                Ingrese un nombre de beneficiario.
+              </div>
+            </div>
+
+            <div class="col-12">Ingrese el monto que desea recaudar</label>
+              <input type="number" class="form-control" id="monto_a_recaudar" placeholder=""  name="monto_a_recaudar" required>
+              <div class="invalid-feedback">
+                Ingrese un monto a recaudar.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="address" placeholder="Direccion de vivienda" value="" name="direccion" required>
+              <div class="invalid-feedback">
+                Ingrese su dirección.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-floating mt-2">
+            <input type="number" class="form-control" id="Teléfono" placeholder="Teléfono" value="" name="telefono" required>
+            <label for="Teléfono">Teléfono</label>
+            <div class="invalid-feedback">
+              Ingrese el teléfono de contacto
+            </div>
+        </div>
+
+
+        <div class="form-floating mt-2">
+            <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
+                <label for="state" class="form-label">Realice una breve descripción sobre la campaña</label>
+                <textarea class="form-control" rows="3" placeholder="Mensaje" name="descripcion" required></textarea>
+                <div class="invalid-feedback">
+                  Ingrese un mensaje descriptivo.
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group w-100 my-3" role="group" aria-label="Botones SignUp">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+            <a class="btn btn-secondary" href="{% url 'index' %}">Cancelar</a>
+        </div>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+    {% endblock %}
