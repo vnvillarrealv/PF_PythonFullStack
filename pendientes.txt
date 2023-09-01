@@ -1,5 +1,0 @@
--colcoar template en el vinculi SOBRE NOSOTROS del emcabezado
--Template de terminos y condiciones
--template para pago exitoso y uno para pago cancelado o fallido (OPCIONAL)
--TEMPLATE DE CONSEJOS PARA LLEGAR A AMS GENTE
-
