@@ -136,5 +136,5 @@ STATICFILES_DIRS = (BASE_DIR / 'static',)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # PAYPAL_RECEIVER_EMAIL = 'sb-le2qe27136555@business.example.com'
-PAYPAL_RECEIVER_EMAIL = 'sb-cxkjy26640820@business.example.com'
+PAYPAL_RECEIVER_EMAIL = 'sb-wkbia26642074@business.example.com'
 PAYPAL_TEST = True
