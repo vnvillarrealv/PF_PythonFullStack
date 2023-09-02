@@ -186,6 +186,7 @@ def campania_registrada(request):
 
     return render(request, 'campania_registrada.html')
 
+@login_required(login_url='/login')
 def solicitud_campania(request):
     return render(request, 'solicitud_campania.html')
 
