@@ -63,7 +63,7 @@ def categoria_alterna():
 
 class SOLICITUDES_CAMPANIAS(models.Model):
     
-    categoria = models.ForeignKey(CATEGORIAS, on_delete=models.SET_DEFAULT, default=categoria_alterna)
+    categoria = models.ForeignKey(CATEGORIAS, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     email = models.CharField(max_length=100)

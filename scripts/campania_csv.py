@@ -8,8 +8,7 @@ def feed_campania():
         for item in csv_dict_reader:
             categoria = CATEGORIAS.objects.get(pk = item['categoria'])
             print("campaña:", item)
-            variable = CAMPANIA(id = item['id'],
-                                    categoria=categoria,
+            variable = CAMPANIA(    categoria=categoria,
                                     nombre_campania = item['nombre_campania'],
                                     descripcion = item['descripcion'],
                                     beneficiario = item['beneficiario'],

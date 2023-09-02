@@ -7,7 +7,7 @@ def feed_principal():
     with open('data/categorias_csv1final.csv', encoding='UTF-8') as csv_file:#con context manager abrmos el csv que esta l caroeta data por eso data\nombrearchivo.csv
         csv_dict_reader = csv.DictReader(csv_file, delimiter=';') #aqui creamos un diccionario con los datos del csv que llamamos csv_file con el context mangaer     
         for item in csv_dict_reader:
-            elemento = CATEGORIAS(id=item['id'], categoria=item['categoria'])
+            elemento = CATEGORIAS(categoria=item['categoria'])
             elemento.save()
             print(f'item creado: {elemento}')
 
